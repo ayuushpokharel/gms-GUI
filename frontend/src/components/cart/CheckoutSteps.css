@@ -1,0 +1,58 @@
+.checkout-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+
+.step.active { opacity: 1; }
+
+.step-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ddd;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.step.active .step-circle {
+  background: #E63946;
+  color: #fff;
+}
+
+.step span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #888;
+  white-space: nowrap;
+}
+
+.step.active span { color: #1a1a2e; }
+
+.step-line {
+  height: 2px;
+  width: 80px;
+  background: #ddd;
+  margin-bottom: 20px;
+  transition: background 0.2s;
+}
+
+.step-line.active { background: #E63946; }
