@@ -9,6 +9,7 @@ exports.processPayment = catchAsyncError(async (req, res, next) => {
       company: "GMS - Gym Management System",
     },
   });
+  // todo : delete user cart after payment gets active
 
   res.status(200).json({
     success: true,

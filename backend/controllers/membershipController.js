@@ -28,10 +28,7 @@ exports.newMembership = catchAsyncError(async (req, res, next) => {
     }
     if (gymClass.capacity < item.quantity) {
       return next(
-        new ErrorHandler(
-          `Not enough capacity in class: ${gymClass.name}`,
-          400
-        )
+        new ErrorHandler(`Not enough capacity in class: ${gymClass.name}`, 400),
       );
     }
 
@@ -41,8 +38,8 @@ exports.newMembership = catchAsyncError(async (req, res, next) => {
       return next(
         new ErrorHandler(
           `Your ${membershipPlan} plan does not allow enrollment in ${gymClass.name}. Required: ${gymClass.requiredMembership}`,
-          400
-        )
+          400,
+        ),
       );
     }
   }
@@ -71,7 +68,7 @@ exports.newMembership = catchAsyncError(async (req, res, next) => {
 exports.getSingleMembership = catchAsyncError(async (req, res, next) => {
   const membership = await Membership.findById(req.params.id).populate(
     "user",
-    "name email"
+    "name email",
   );
 
   if (!membership) {
@@ -120,22 +117,26 @@ exports.updateMembership = catchAsyncError(async (req, res, next) => {
   }
 
   if (membership.membershipStatus === "Expired") {
-    return next(
-      new ErrorHandler("This membership has already expired", 400)
-    );
+    return next(new ErrorHandler("This membership has already expired", 400));
   }
 
-  if (req.body.status === "Active" && membership.membershipStatus !== "Active") {
+  if (
+    req.body.status === "Active" &&
+    membership.membershipStatus !== "Active"
+  ) {
     for (const c of membership.enrolledClasses) {
       await updateCapacity(c.gymClass, c.quantity);
     }
     membership.activatedAt = Date.now();
+    await User.findByIdAndUpdate(membership.user, {
+      $unset: { cartItems: "" },
+    });
 
     // Update user's membership type and expiry
     await User.findByIdAndUpdate(membership.user, {
       membershipType: membership.membershipPlan,
       membershipExpiry: new Date(
-        Date.now() + membership.duration * 30 * 24 * 60 * 60 * 1000
+        Date.now() + membership.duration * 30 * 24 * 60 * 60 * 1000,
       ),
     });
   }

@@ -2,23 +2,24 @@ import {
   ADD_TO_CART,
   REMOVE_CART_ITEM,
   SAVE_SHIPPING_INFO,
+  CLEAR_CART,
 } from "../constants/cartConstants";
 
 export const cartReducer = (
   state = { cartItems: [], shippingInfo: {} },
-  action
+  action,
 ) => {
   switch (action.type) {
     case ADD_TO_CART:
       const item = action.payload;
       const isItemExist = state.cartItems.find(
-        (i) => i.gymClass === item.gymClass
+        (i) => i.gymClass === item.gymClass,
       );
       if (isItemExist) {
         return {
           ...state,
           cartItems: state.cartItems.map((i) =>
-            i.gymClass === isItemExist.gymClass ? item : i
+            i.gymClass === isItemExist.gymClass ? item : i,
           ),
         };
       } else {
@@ -36,6 +37,11 @@ export const cartReducer = (
       return {
         ...state,
         shippingInfo: action.payload,
+      };
+    case CLEAR_CART:
+      return {
+        ...state,
+        cartItems: [],
       };
     default:
       return state;
