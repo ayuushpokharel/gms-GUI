@@ -18,12 +18,15 @@ const Footer = () => {
       </div>
       <div className="footer-right">
         <h4>Contact</h4>
-        <p>📧 info@gms.com</p>
-        <p>📞 +977-9800000000</p>
-        <p>📍 Kathmandu, Nepal</p>
+        <p>📧 gymanagementsystem@gmail.com</p>
+        <p>📞 +977-9862690633</p>
+        <p>📍 Bhaktapur, Nepal</p>
       </div>
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} GMS — Gym Management System. All Rights Reserved.</p>
+        <p>
+          &copy; {new Date().getFullYear()} GMS — Gym Management System. All
+          Rights Reserved.
+        </p>
       </div>
     </footer>
   );

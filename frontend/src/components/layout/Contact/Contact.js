@@ -3,7 +3,11 @@ import MetaData from "../MetaData";
 import "./Contact.css";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -30,21 +34,21 @@ const Contact = () => {
               <span>📧</span>
               <div>
                 <h4>Email</h4>
-                <p>info@gms.com</p>
+                <p>gymanagementsystem@gmail.com</p>
               </div>
             </div>
             <div className="info-item">
               <span>📞</span>
               <div>
                 <h4>Phone</h4>
-                <p>+977-9800000000</p>
+                <p>+977-9862690633</p>
               </div>
             </div>
             <div className="info-item">
               <span>📍</span>
               <div>
                 <h4>Location</h4>
-                <p>Thamel, Kathmandu, Nepal</p>
+                <p>Sallaghari, Bhaktapur, Nepal</p>
               </div>
             </div>
             <div className="info-item">
