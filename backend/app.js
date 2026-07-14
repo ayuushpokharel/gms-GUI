@@ -15,7 +15,7 @@ app.use(
   cors({
     origin: process.env.FRONTEND_URL,
     credentials: true,
-  })
+  }),
 );
 
 // Route Imports
@@ -23,11 +23,13 @@ const classRoute = require("./routes/classRoute");
 const userRoute = require("./routes/userRoute");
 const membershipRoute = require("./routes/membershipRoute");
 const paymentRoute = require("./routes/paymentRoute");
+const progressRoute = require("./routes/progressRoute");
 
 app.use("/api/v1", classRoute);
 app.use("/api/v1", userRoute);
 app.use("/api/v1", membershipRoute);
 app.use("/api/v1", paymentRoute);
+app.use("/api/v1", progressRoute);
 
 // Middleware for Errors
 app.use(errorMiddleware);

@@ -55,6 +55,10 @@ import UserList from "./components/Admin/UserList";
 import UpdateUser from "./components/Admin/UpdateUser";
 import ClassReviews from "./components/Admin/ClassReviews";
 
+// Progress
+import MyProgress from "./components/Progress/MyProgress";
+import AddProgress from "./components/Progress/AddProgress";
+
 // Protected Route
 import ProtectedRoute from "./components/Route/ProtectedRoute";
 
@@ -101,14 +105,86 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
 
         {/* Protected */}
-        <Route path="/account" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-        <Route path="/profile/update" element={<ProtectedRoute><UpdateProfile /></ProtectedRoute>} />
-        <Route path="/password/update" element={<ProtectedRoute><UpdatePassword /></ProtectedRoute>} />
-        <Route path="/health-info" element={<ProtectedRoute><HealthInfo /></ProtectedRoute>} />
-        <Route path="/membership/confirm" element={<ProtectedRoute><ConfirmMembership /></ProtectedRoute>} />
-        <Route path="/success" element={<ProtectedRoute><MembershipSuccess /></ProtectedRoute>} />
-        <Route path="/memberships" element={<ProtectedRoute><MyMemberships /></ProtectedRoute>} />
-        <Route path="/membership/:id" element={<ProtectedRoute><MembershipDetails /></ProtectedRoute>} />
+        <Route
+          path="/account"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile/update"
+          element={
+            <ProtectedRoute>
+              <UpdateProfile />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/password/update"
+          element={
+            <ProtectedRoute>
+              <UpdatePassword />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/health-info"
+          element={
+            <ProtectedRoute>
+              <HealthInfo />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/membership/confirm"
+          element={
+            <ProtectedRoute>
+              <ConfirmMembership />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/success"
+          element={
+            <ProtectedRoute>
+              <MembershipSuccess />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/memberships"
+          element={
+            <ProtectedRoute>
+              <MyMemberships />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/membership/:id"
+          element={
+            <ProtectedRoute>
+              <MembershipDetails />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/progress/me"
+          element={
+            <ProtectedRoute>
+              <MyProgress />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/progress/new"
+          element={
+            <ProtectedRoute>
+              <AddProgress />
+            </ProtectedRoute>
+          }
+        />
 
         {/* Payment (Stripe) */}
         {stripeApiKey && (
@@ -116,25 +192,97 @@ const App = () => {
             path="/process/payment"
             element={
               <Elements stripe={loadStripe(stripeApiKey)}>
-                <ProtectedRoute><Payment /></ProtectedRoute>
+                <ProtectedRoute>
+                  <Payment />
+                </ProtectedRoute>
               </Elements>
             }
           />
         )}
 
         {/* Trainer Portal */}
-        <Route path="/trainer/portal" element={<ProtectedRoute><TrainerPortal /></ProtectedRoute>} />
+        <Route
+          path="/trainer/portal"
+          element={
+            <ProtectedRoute>
+              <TrainerPortal />
+            </ProtectedRoute>
+          }
+        />
 
         {/* Admin */}
-        <Route path="/admin/dashboard" element={<ProtectedRoute isAdmin={true}><Dashboard /></ProtectedRoute>} />
-        <Route path="/admin/classes" element={<ProtectedRoute isAdmin={true}><ClassList /></ProtectedRoute>} />
-        <Route path="/admin/class" element={<ProtectedRoute isAdmin={true}><NewClass /></ProtectedRoute>} />
-        <Route path="/admin/class/:id" element={<ProtectedRoute isAdmin={true}><UpdateClass /></ProtectedRoute>} />
-        <Route path="/admin/memberships" element={<ProtectedRoute isAdmin={true}><MembershipList /></ProtectedRoute>} />
-        <Route path="/admin/membership/:id" element={<ProtectedRoute isAdmin={true}><ProcessMembership /></ProtectedRoute>} />
-        <Route path="/admin/users" element={<ProtectedRoute isAdmin={true}><UserList /></ProtectedRoute>} />
-        <Route path="/admin/user/:id" element={<ProtectedRoute isAdmin={true}><UpdateUser /></ProtectedRoute>} />
-        <Route path="/admin/reviews" element={<ProtectedRoute isAdmin={true}><ClassReviews /></ProtectedRoute>} />
+        <Route
+          path="/admin/dashboard"
+          element={
+            <ProtectedRoute isAdmin={true}>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/classes"
+          element={
+            <ProtectedRoute isAdmin={true}>
+              <ClassList />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/class"
+          element={
+            <ProtectedRoute isAdmin={true}>
+              <NewClass />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/class/:id"
+          element={
+            <ProtectedRoute isAdmin={true}>
+              <UpdateClass />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/memberships"
+          element={
+            <ProtectedRoute isAdmin={true}>
+              <MembershipList />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/membership/:id"
+          element={
+            <ProtectedRoute isAdmin={true}>
+              <ProcessMembership />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/users"
+          element={
+            <ProtectedRoute isAdmin={true}>
+              <UserList />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/user/:id"
+          element={
+            <ProtectedRoute isAdmin={true}>
+              <UpdateUser />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/reviews"
+          element={
+            <ProtectedRoute isAdmin={true}>
+              <ClassReviews />
+            </ProtectedRoute>
+          }
+        />
 
         {/* 404 */}
         <Route path="*" element={<NotFound />} />

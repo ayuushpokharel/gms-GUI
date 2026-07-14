@@ -30,6 +30,11 @@ import {
   membershipReducer,
 } from "./reducers/membershipReducer";
 
+import {
+  myProgressReducer,
+  addProgressReducer,
+} from "./reducers/progressReducer";
+
 const reducer = combineReducers({
   gymClass: classDetailReducer,
   classes: classesReducer,
@@ -49,6 +54,8 @@ const reducer = combineReducers({
   userDetails: userDetailsReducer,
   classReviews: classReviewsReducer,
   review: reviewReducer,
+  myProgress: myProgressReducer,
+  addProgress: addProgressReducer,
 });
 
 let initialState = {
@@ -67,7 +74,7 @@ const middleware = [thunk];
 const store = createStore(
   reducer,
   initialState,
-  composeWithDevTools(applyMiddleware(...middleware))
+  composeWithDevTools(applyMiddleware(...middleware)),
 );
 
 export default store;
