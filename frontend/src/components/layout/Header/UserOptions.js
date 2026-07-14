@@ -12,6 +12,7 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import "./UserOptions.css";
 
 const UserOptions = ({ user }) => {
@@ -23,6 +24,7 @@ const UserOptions = ({ user }) => {
 
   const options = [
     { icon: <ListAltIcon />, name: "My Memberships", func: memberships },
+    { icon: <TrendingUpIcon />, name: "My Progress", func: progress },
     { icon: <PersonIcon />, name: "Profile", func: account },
     {
       icon: (
@@ -61,6 +63,9 @@ const UserOptions = ({ user }) => {
   function memberships() {
     navigate("/memberships");
   }
+  function progress() {
+    navigate("/progress/me");
+  }
   function account() {
     navigate("/account");
   }
@@ -85,7 +90,9 @@ const UserOptions = ({ user }) => {
         icon={
           <img
             className="speedDialIcon"
-            src={user.avatar && user.avatar.url ? user.avatar.url : "/profile.png"}
+            src={
+              user.avatar && user.avatar.url ? user.avatar.url : "/profile.png"
+            }
             alt="Profile"
           />
         }

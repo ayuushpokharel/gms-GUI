@@ -35,6 +35,8 @@ import {
   addProgressReducer,
 } from "./reducers/progressReducer";
 
+import { analyticsReducer } from "./reducers/analyticsReducer";
+
 const reducer = combineReducers({
   gymClass: classDetailReducer,
   classes: classesReducer,
@@ -56,6 +58,7 @@ const reducer = combineReducers({
   review: reviewReducer,
   myProgress: myProgressReducer,
   addProgress: addProgressReducer,
+  analytics: analyticsReducer,
 });
 
 let initialState = {

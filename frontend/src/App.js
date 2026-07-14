@@ -62,6 +62,9 @@ import AddProgress from "./components/Progress/AddProgress";
 // Protected Route
 import ProtectedRoute from "./components/Route/ProtectedRoute";
 
+// Analytics
+import Analytics from "./components/Admin/Analytics";
+
 // User action
 import { loadUser } from "./actions/userAction";
 
@@ -182,6 +185,14 @@ const App = () => {
           element={
             <ProtectedRoute>
               <AddProgress />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/analytics"
+          element={
+            <ProtectedRoute isAdmin={true}>
+              <Analytics />
             </ProtectedRoute>
           }
         />

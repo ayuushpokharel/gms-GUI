@@ -1,6 +1,6 @@
 const Progress = require("../models/progressModel");
 const ErrorHandler = require("../utils/errorHandler");
-const catchAsyncErrors = require("../middleware/catchAsyncErrors");
+const catchAsyncErrors = require("../middleware/catchAsyncError");
 
 // Add a new progress entry — POST /api/v1/progress/new
 exports.addProgress = catchAsyncErrors(async (req, res, next) => {

@@ -10,6 +10,7 @@ import ListIcon from "@mui/icons-material/List";
 import CardMembershipIcon from "@mui/icons-material/CardMembership";
 import PeopleIcon from "@mui/icons-material/People";
 import RateReviewIcon from "@mui/icons-material/RateReview";
+import BarChartIcon from "@mui/icons-material/BarChart";
 import "./Sidebar.css";
 
 const Sidebar = () => {
@@ -17,6 +18,11 @@ const Sidebar = () => {
     <div className="sidebar">
       <Link to="/admin/dashboard" className="sidebar-brand">
         🏋️ <span>GMS Admin</span>
+      </Link>
+
+      <Link to="/admin/analytics" className="sidebar-link">
+        <BarChartIcon fontSize="small" />
+        <span>Analytics</span>
       </Link>
 
       <div className="sidebar-nav">
