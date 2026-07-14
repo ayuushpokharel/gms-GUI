@@ -58,6 +58,7 @@ import ClassReviews from "./components/Admin/ClassReviews";
 // Progress
 import MyProgress from "./components/Progress/MyProgress";
 import AddProgress from "./components/Progress/AddProgress";
+import CheckIn from "./components/Attendance/CheckIn";
 
 // Protected Route
 import ProtectedRoute from "./components/Route/ProtectedRoute";
@@ -169,6 +170,14 @@ const App = () => {
           element={
             <ProtectedRoute>
               <MembershipDetails />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/checkin"
+          element={
+            <ProtectedRoute>
+              <CheckIn />
             </ProtectedRoute>
           }
         />

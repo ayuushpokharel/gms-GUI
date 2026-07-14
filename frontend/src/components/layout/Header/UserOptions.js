@@ -13,6 +13,7 @@ import ListAltIcon from "@mui/icons-material/ListAlt";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import "./UserOptions.css";
 
 const UserOptions = ({ user }) => {
@@ -24,6 +25,7 @@ const UserOptions = ({ user }) => {
 
   const options = [
     { icon: <ListAltIcon />, name: "My Memberships", func: memberships },
+    { icon: <EventAvailableIcon />, name: "Check In", func: checkin },
     { icon: <TrendingUpIcon />, name: "My Progress", func: progress },
     { icon: <PersonIcon />, name: "Profile", func: account },
     {
@@ -62,6 +64,9 @@ const UserOptions = ({ user }) => {
   }
   function memberships() {
     navigate("/memberships");
+  }
+  function checkin() {
+    navigate("/checkin");
   }
   function progress() {
     navigate("/progress/me");

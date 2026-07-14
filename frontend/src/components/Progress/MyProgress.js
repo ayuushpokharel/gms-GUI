@@ -50,6 +50,8 @@ const MyProgress = () => {
         </button>
       </div>
 
+      <AttendanceStats />
+
       {progressEntries && progressEntries.length === 0 ? (
         <p className="no-entries">
           No progress entries yet. Start tracking today!
