@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { getMyProgress, deleteProgress } from "../../actions/progressAction";
 import { DELETE_PROGRESS_RESET } from "../../constants/progressConstants";
 import Loader from "../layout/Loader/Loader";
+import AttendanceStats from "../Attendance/AttendanceStats";
 import "./Progress.css";
 
 const MyProgress = () => {

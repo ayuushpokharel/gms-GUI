@@ -1,0 +1,154 @@
+/* Check-in page */
+.checkin-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.checkin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.checkin-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.view-progress-btn {
+  background: transparent;
+  border: 1px solid #e53935;
+  color: #e53935;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.view-progress-btn:hover {
+  background: #e53935;
+  color: white;
+}
+
+.checkin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.checkin-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 18px 22px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.checkin-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.checkin-time {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.checkin-btn {
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.checkin-btn:hover {
+  background: #c62828;
+}
+
+.checkin-btn.checked-in {
+  background: #e8f5e9;
+  color: #2e7d32;
+  cursor: default;
+}
+
+/* Attendance stats block (embedded in My Progress) */
+.attendance-stats {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.attendance-summary {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.summary-card {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.summary-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #e53935;
+}
+
+.summary-label {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 4px;
+}
+
+.heatmap-section,
+.breakdown-section {
+  margin-bottom: 24px;
+}
+
+.heatmap-section h3,
+.breakdown-section h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.heatmap-grid {
+  display: flex;
+  gap: 3px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.heatmap-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.heatmap-cell {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.breakdown-chart {
+  max-width: 340px;
+}
