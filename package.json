@@ -5,7 +5,8 @@
   "description": "Gym Management System - MERN Stack",
   "scripts": {
     "start": "node backend/server.js",
-    "dev": "nodemon backend/server.js"
+    "dev": "nodemon backend/server.js",
+    "build": "cd frontend && npm install && npm run build"
   },
   "author": "Ayush Pokharel",
   "license": "ISC",
