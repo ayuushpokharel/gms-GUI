@@ -66,6 +66,9 @@ import ProtectedRoute from "./components/Route/ProtectedRoute";
 // Analytics
 import Analytics from "./components/Admin/Analytics";
 
+// Esewa Settings
+import EsewaSettings from "./components/Admin/EsewaSettings";
+
 // User action
 import { loadUser } from "./actions/userAction";
 
@@ -219,6 +222,16 @@ const App = () => {
             }
           />
         )}
+
+        {/* Admin: eSewa Settings */}
+        <Route
+          path="/admin/esewa"
+          element={
+            <ProtectedRoute isAdmin={true}>
+              <EsewaSettings />
+            </ProtectedRoute>
+          }
+        />
 
         {/* Trainer Portal */}
         <Route

@@ -11,6 +11,7 @@ import CardMembershipIcon from "@mui/icons-material/CardMembership";
 import PeopleIcon from "@mui/icons-material/People";
 import RateReviewIcon from "@mui/icons-material/RateReview";
 import BarChartIcon from "@mui/icons-material/BarChart";
+import PaymentIcon from "@mui/icons-material/Payment";
 import "./Sidebar.css";
 
 const Sidebar = () => {
@@ -23,6 +24,11 @@ const Sidebar = () => {
       <Link to="/admin/analytics" className="sidebar-link">
         <BarChartIcon fontSize="small" />
         <span>Analytics</span>
+      </Link>
+
+      <Link to="/admin/esewa" className="sidebar-link">
+        <PaymentIcon fontSize="small" />
+        <span>eSewa QR</span>
       </Link>
 
       <div className="sidebar-nav">

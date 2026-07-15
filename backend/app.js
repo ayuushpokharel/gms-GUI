@@ -26,6 +26,7 @@ const paymentRoute = require("./routes/paymentRoute");
 const progressRoute = require("./routes/progressRoute");
 const analyticsRoute = require("./routes/analyticsRoute");
 const attendanceRoute = require("./routes/attendanceRoute");
+const settingsRoute = require("./routes/settingsRoute");
 
 app.use("/api/v1", classRoute);
 app.use("/api/v1", userRoute);
@@ -34,6 +35,7 @@ app.use("/api/v1", paymentRoute);
 app.use("/api/v1", progressRoute);
 app.use("/api/v1", analyticsRoute);
 app.use("/api/v1", attendanceRoute);
+app.use("/api/v1", settingsRoute);
 
 // Middleware for Errors
 app.use(errorMiddleware);

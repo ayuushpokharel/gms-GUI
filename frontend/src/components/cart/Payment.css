@@ -13,7 +13,7 @@
   padding: 2.5rem;
   width: 100%;
   max-width: 480px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 
 .payment-box h2 {
@@ -32,7 +32,7 @@
 }
 
 .payment-amount strong {
-  color: #E63946;
+  color: #e63946;
   font-size: 1.3rem;
 }
 
@@ -65,7 +65,7 @@
 }
 
 .stripe-input:focus-within {
-  border-color: #E63946;
+  border-color: #e63946;
 }
 
 .form-row {
@@ -85,7 +85,7 @@
 }
 
 .pay-btn {
-  background: #E63946;
+  background: #e63946;
   color: #fff;
   border: none;
   padding: 1rem;
@@ -105,4 +105,107 @@
 .pay-btn:disabled {
   background: #ccc;
   cursor: not-allowed;
+}
+
+/* ── Payment Method Toggle ── */
+.payment-toggle {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1.5rem;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: none;
+  background: #f8f8f8;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.toggle-btn.active {
+  background: #e63946;
+  color: #fff;
+}
+
+.esewa-logo-small {
+  height: 18px;
+  object-fit: contain;
+}
+
+/* ── eSewa Panel ── */
+.esewa-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+
+.esewa-no-qr {
+  text-align: center;
+  color: #888;
+  padding: 2rem;
+}
+
+.esewa-no-qr p {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.esewa-instruction {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.esewa-number {
+  font-size: 0.95rem;
+  color: #555;
+  background: #f0f0f0;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+
+.esewa-qr-wrap {
+  border: 2px solid #eee;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fff;
+}
+
+.esewa-qr {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+}
+
+.esewa-note {
+  font-size: 0.82rem;
+  color: #888;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.esewa-confirm-btn {
+  width: 100%;
+  background: #60b246;
+}
+
+.esewa-confirm-btn:hover:not(:disabled) {
+  background: #4a8f34;
 }
